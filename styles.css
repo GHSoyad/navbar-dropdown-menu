@@ -4,6 +4,7 @@
     box-sizing: border-box;
 }
 
+/* Navbar */
 nav>ul {
     display: flex;
     justify-content: center;
@@ -30,6 +31,7 @@ nav ul li a:hover {
     background-color: crimson;
 }
 
+/* Navbar dropdown */
 .nav-dropdown>ul {
     position: absolute;
     left: 0;
@@ -39,5 +41,19 @@ nav ul li a:hover {
 }
 
 .nav-dropdown:hover>ul {
+    display: block;
+}
+
+/* Navbar submenu dropdown */
+.nav-sub-dropdown ul {
+    position: absolute;
+    top: 0;
+    left: 100%;
+    min-width: max-content;
+    display: none;
+    border: 1px solid crimson;
+}
+
+.nav-sub-dropdown:hover ul {
     display: block;
 }
