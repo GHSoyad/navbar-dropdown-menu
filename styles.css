@@ -3,3 +3,41 @@
     margin: 0;
     box-sizing: border-box;
 }
+
+nav>ul {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+nav ul li {
+    list-style: none;
+    position: relative;
+}
+
+nav ul li a {
+    display: inline-block;
+    text-decoration: none;
+    color: crimson;
+    font-size: 25px;
+    font-family: Arial, Helvetica, sans-serif;
+    transition: .3s;
+    padding: 10px;
+}
+
+nav ul li a:hover {
+    color: white;
+    background-color: crimson;
+}
+
+.nav-dropdown>ul {
+    position: absolute;
+    left: 0;
+    min-width: max-content;
+    display: none;
+    border: 1px solid crimson;
+}
+
+.nav-dropdown:hover>ul {
+    display: block;
+}
