@@ -1,14 +1,37 @@
+:root {
+    --primary-color: crimson;
+    --secondary-color: white;
+}
+
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
 
+body {
+    height: 100vh;
+}
+
+main {
+    width: 70%;
+    margin: 0 auto;
+    text-align: justify;
+    margin-top: 60px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
 /* Navbar */
 nav>ul {
     display: flex;
-    justify-content: center;
-    margin-top: 40px;
+    width: 50%;
+    justify-content: space-between;
+    padding-top: 40px;
+    margin: 0 auto;
 }
 
 nav ul li {
@@ -19,7 +42,7 @@ nav ul li {
 nav ul li a {
     display: inline-block;
     text-decoration: none;
-    color: crimson;
+    color: var(--primary-color);
     font-size: 25px;
     font-family: Arial, Helvetica, sans-serif;
     transition: .3s;
@@ -27,8 +50,8 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    color: white;
-    background-color: crimson;
+    color: var(--secondary-color);
+    background-color: var(--primary-color);
 }
 
 /* Navbar dropdown */
@@ -37,23 +60,61 @@ nav ul li a:hover {
     left: 0;
     min-width: max-content;
     display: none;
-    border: 1px solid crimson;
+    border: 1px solid var(--primary-color);
+    background-color: var(--secondary-color);
 }
 
 .nav-dropdown:hover>ul {
     display: block;
 }
 
+.nav-dropdown:hover>a {
+    color: var(--secondary-color);
+    background-color: var(--primary-color);
+}
+
 /* Navbar submenu dropdown */
 .nav-sub-dropdown ul {
     position: absolute;
-    top: 0;
+    top: -1px;
     left: 100%;
     min-width: max-content;
     display: none;
-    border: 1px solid crimson;
+    border: 1px solid var(--primary-color);
+    background-color: var(--secondary-color);
 }
 
 .nav-sub-dropdown:hover ul {
     display: block;
+}
+
+.nav-sub-dropdown:hover>a {
+    color: var(--secondary-color);
+    background-color: var(--primary-color);
+}
+
+/* Dropdown menu divider */
+.nav-dropdown ul li:not(:last-child) {
+    border-bottom: 1px solid var(--primary-color);
+}
+
+/* Dropdown indicator */
+.nav-dropdown:hover::after {
+    content: "";
+    border-bottom: 6px solid var(--secondary-color);
+    border-right: 6px solid transparent;
+    border-left: 6px solid transparent;
+    position: absolute;
+    bottom: -1px;
+    left: calc(50% - 6px);
+}
+
+.nav-sub-dropdown:hover::after {
+    content: "";
+    border-right: 6px solid var(--secondary-color);
+    border-top: 6px solid transparent;
+    border-bottom: 6px solid transparent;
+    position: absolute;
+    right: -1px;
+    top: calc(50% - 6px);
 }
